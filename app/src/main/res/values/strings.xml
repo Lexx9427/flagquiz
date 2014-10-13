@@ -25,4 +25,6 @@
     <string name="choose_questions_amount">Choose questions amount</string>
     <string name="title_activity_you_could_be_better_dialog">YouCouldBeBetterDialog</string>
 
+    <string name="facebook_app_id">1492884950970038</string>
+
 </resources>

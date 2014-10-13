@@ -30,6 +30,7 @@ public class GameScreenActivity extends InjectActivity implements GameView.GameP
     private final String QUESTIONS_AMOUNT_KEY = "questionsAmount";
     private final String GOOD_KEY = "good";
     private final String BAD_KEY = "bad";
+    private final String FB_NAME_EXTRA_KEY = "fb_name";
     @InjectView(R.id.game_view)
     GameView gameView;
 
@@ -145,9 +146,13 @@ public class GameScreenActivity extends InjectActivity implements GameView.GameP
     public void finishGame() {
         Intent intent;
         int score = good - bad;
-        if (daoScores.checkScore(score)) {
+        if (daoScores.checkScore(score) && score > 0) {
             intent = new Intent(this, CongratulationsActivity.class);
             intent.putExtra("score",score);
+            if(getIntent().hasExtra(FB_NAME_EXTRA_KEY)) {
+                String fbName = getIntent().getStringExtra(FB_NAME_EXTRA_KEY);
+                intent.putExtra(FB_NAME_EXTRA_KEY, fbName);
+            }
         } else {
             intent = new Intent(this, YouCouldBeBetterDialog.class);
         }

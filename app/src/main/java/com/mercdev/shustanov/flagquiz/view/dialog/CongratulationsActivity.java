@@ -33,11 +33,16 @@ public class CongratulationsActivity extends InjectActivity {
     @Inject
     DAOScores daoScores;
 
+    private final String FB_NAME_EXTRA_KEY = "fb_name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.createAndInject(savedInstanceState, R.layout.activity_congratulations);
         ((FlagQuizApp) getApplicationContext()).inject(this);
+        if(getIntent().hasExtra(FB_NAME_EXTRA_KEY)) {
+            String fbName = getIntent().getStringExtra(FB_NAME_EXTRA_KEY);
+            nameEdit.setText(fbName);
+        }
     }
 
     @OnClick(R.id.ok_button)

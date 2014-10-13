@@ -8,12 +8,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mercdev.shustanov.flagquiz.view.activity.MainActivity">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/welcome_to_quiz"
         android:textSize="@dimen/header_text_size" />
+
 
     <Button
         android:id="@+id/start_quiz_button"
@@ -23,11 +25,22 @@
         android:layout_margin="@dimen/button_margin"
         android:text="@string/start_quiz_button" />
 
+    <com.facebook.widget.LoginButton
+        android:id="@+id/facebook_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start_quiz_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_margin="@dimen/button_margin"/>
+
+
     <Button
         android:id="@+id/settings_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/start_quiz_button"
+        android:layout_below="@id/facebook_login"
+
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/button_margin"
         android:text="@string/settings_button_text" />
