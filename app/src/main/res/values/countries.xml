@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dnr">DNR</string>
+    <string name="lnr">LNR</string>
+    <string name="russia">Russia</string>
+    <string name="usa">USA</string>
+    <string name="belgium">Belgium</string>
+    <string name="Chine">Chine</string>
+    <string name="czeh">Czech</string>
+    <string name="nicaragua">Nicaragua</string>
+</resources>

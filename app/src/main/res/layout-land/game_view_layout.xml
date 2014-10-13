@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/current_flag_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/game_view_current_flag_description"
+        android:src="@drawable/splash_screen" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/standard_margin"
+        android:layout_toRightOf="@+id/current_flag_image_view"
+        android:layout_toEndOf="@+id/current_flag_image_view">
+
+        <Button
+            android:id="@+id/first"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin" />
+
+        <Button
+            android:id="@+id/second"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin" />
+
+        <Button
+            android:id="@+id/third"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin" />
+
+        <Button
+            android:id="@+id/fourth"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin" />
+
+    </GridLayout>
+
+</RelativeLayout>

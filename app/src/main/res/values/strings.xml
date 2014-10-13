@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FlagQuiz</string>
+    <string name="greeting">FlagQuiz. Developed by Alexander Shustanov</string>
+    <string name="action_settings">Settings</string>
+    <string name="splash_screen_picture_content_description">SplashScreenPicture</string>
+    <string name="title_activity_main">FlagQuiz</string>
+    <string name="welcome_to_quiz">Do you want to play?</string>
+    <string name="start_quiz_button">Start Quiz</string>
+    <string name="title_activity_game_screen">Flag Quiz</string>
+    <string name="exit_button_text">Exit</string>
+    <string name="settings_button_text">Settings</string>
+    <string name="preference_key">flagquiz</string>
+    <string name="game_view_current_flag_description">Current Flag</string>
+    <string name="questions_amount_key">questionsAmount</string>
+    <string name="title_activity_congratulations">Congratulations</string>
+    <string name="title_activity_scores">High Scores</string>
+    <string name="you_could_be_better">You could be better! See you soon!</string>
+    <string name="congratulation_text">Congratulations! I have got to the best tenth!</string>
+    <string name="input_name_hint">Input your name</string>
+    <string name="ok_button_text">OK</string>
+    <string name="scores_button_text">Scores</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="choose_questions_amount">Choose questions amount</string>
+    <string name="title_activity_you_could_be_better_dialog">YouCouldBeBetterDialog</string>
+
+</resources>

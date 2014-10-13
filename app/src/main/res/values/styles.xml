@@ -1,0 +1,16 @@
+<resources>
+
+    <color name="window_background_color">#ff55c6f6</color>
+    <color name="button_normal_color">#aa33a4a4</color>
+    <color name="button_pressed_color">#aa33a4ee</color>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/window_background_color</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="ButtonStyle" parent="android:Widget.Button">
+        <item name="android:background">@drawable/quiz_button</item>
+    </style>
+
+</resources>
