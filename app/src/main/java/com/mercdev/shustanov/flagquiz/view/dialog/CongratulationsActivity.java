@@ -14,6 +14,8 @@ import com.mercdev.shustanov.flagquiz.view.InjectActivity;
 import com.mercdev.shustanov.flagquiz.view.activity.MainActivity;
 import com.mercdev.shustanov.flagquiz.view.activity.ScoresActivity;
 
+import java.util.Date;
+
 import javax.inject.Inject;
 
 import butterknife.InjectView;
@@ -41,7 +43,7 @@ public class CongratulationsActivity extends InjectActivity {
     @OnClick(R.id.ok_button)
     void onOKButtonClick() {
         int score = getIntent().getIntExtra("score", 0);
-        daoScores.insert(new Score(nameEdit.getText().toString(), score));
+        daoScores.insert(new Score(nameEdit.getText().toString(), score, new Date()));
         Intent intent = new Intent(this, ScoresActivity.class);
         startActivity(intent);
     }

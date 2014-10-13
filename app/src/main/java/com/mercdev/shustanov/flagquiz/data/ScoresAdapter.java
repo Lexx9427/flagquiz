@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.mercdev.shustanov.flagquiz.R;
 import com.mercdev.shustanov.flagquiz.db.DAOScores;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -20,6 +21,7 @@ public class ScoresAdapter extends BaseAdapter {
 
     private final DAOScores daoScores;
     private final LayoutInflater inflater;
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat();
     private List<Score> scores;
 
     @Inject
@@ -56,6 +58,7 @@ public class ScoresAdapter extends BaseAdapter {
         }
         Score score = scores.get(i);
         ((TextView) view.findViewById(R.id.name)).setText(score.getName());
+        ((TextView) view.findViewById(R.id.date)).setText(dateFormat.format(score.getDate()));
         ((TextView) view.findViewById(R.id.score)).setText(String.valueOf(score.getScore()));
         return view;
     }

@@ -5,8 +5,11 @@ import android.database.Cursor;
 
 import com.mercdev.shustanov.flagquiz.data.Score;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -23,10 +26,12 @@ public class DAOScores {
             "CREATE TABLE " + TABLE_NAME + " (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "score INTEGER ," +
+                    "date DATE ," +
                     "name TEXT " +
                     ");";
 
     private final DBHelper dbHelper;
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat();
 
     @Inject
     public DAOScores(DBHelper dbHelper) {
@@ -47,13 +52,18 @@ public class DAOScores {
     }
 
     public List<Score> getHighScores() {
-        Cursor cursor = dbHelper.getReadableDatabase().query(false, TABLE_NAME, new String[]{"score", "name"}, null, null, null, null, null, "10");
+        Cursor cursor = dbHelper.getReadableDatabase().query(false, TABLE_NAME, new String[]{"score", "name", "date"}, null, null, null, null, null, "10");
         List<Score> scores = new ArrayList<Score>();
         int scoreIdx = cursor.getColumnIndex("score");
         int nameIdx = cursor.getColumnIndex("name");
+        int dateIdx = cursor.getColumnIndex("date");
 
         while (cursor.moveToNext()) {
-            scores.add(new Score(cursor.getString(nameIdx), cursor.getInt(scoreIdx)));
+            try {
+                scores.add(new Score(cursor.getString(nameIdx), cursor.getInt(scoreIdx), dateFormat.parse(cursor.getString(dateIdx))));
+            } catch (ParseException e) {
+                scores.add(new Score(cursor.getString(nameIdx), cursor.getInt(scoreIdx), new Date()));
+            }
         }
 
         Collections.sort(scores);
@@ -65,6 +75,7 @@ public class DAOScores {
         ContentValues values = new ContentValues();
         values.put("name", score.getName());
         values.put("score", score.getScore());
+        values.put("date", dateFormat.format(score.getDate()));
         dbHelper.getWritableDatabase().insert(TABLE_NAME, null, values);
     }
 }
